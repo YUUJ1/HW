@@ -7,9 +7,13 @@ import android.widget.MultiAutoCompleteTextView
 import android.widget.TextView
 import org.w3c.dom.Text
 import android.widget.Toast
+import kotlin.math.sqrt
+
+
 
 class MainActivity : AppCompatActivity() {
     private lateinit var resultTextView: TextView
+
 
     private var operand: Double = 0.0
     private var operation: String = ""
@@ -18,7 +22,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        resultTextView = findViewById(R.id.linearLayout)
+        resultTextView = findViewById(R.id.resultTextView)
+
     }
 
 
@@ -27,6 +32,7 @@ class MainActivity : AppCompatActivity() {
         if (clickedView is TextView) {
 
             var result = resultTextView.text.toString()
+
             val number = clickedView.text.toString()
 
             if (result == "0") {
@@ -34,6 +40,7 @@ class MainActivity : AppCompatActivity() {
             }
 
             resultTextView.text = result + number
+
         }
 
     }
@@ -53,7 +60,9 @@ class MainActivity : AppCompatActivity() {
 
             operation = clickedView.text.toString()
 
-            resultTextView.text = result + operation
+            resultTextView.text = ""
+
+
         }
 
     }
@@ -74,9 +83,10 @@ class MainActivity : AppCompatActivity() {
             "+" -> resultTextView.text = (operand + secOperand).toString()
             "-" -> resultTextView.text = (operand - secOperand).toString()
             "*" -> resultTextView.text = (operand * secOperand).toString()
+            "%" -> resultTextView.text = ((operand * secOperand) / 100).toString()
             "/" -> {
 
-                if ( secOperandText == "0") { // ნულზე გაყოფა არ შეიძლება
+                if ( secOperandText == "0") {
 
                     Toast.makeText(applicationContext, "Can't divide by zero.", Toast.LENGTH_SHORT).show()
                 }
@@ -86,6 +96,7 @@ class MainActivity : AppCompatActivity() {
 
         }
 
+
     }
 
 
@@ -93,8 +104,8 @@ class MainActivity : AppCompatActivity() {
 
         val result = resultTextView.text.toString()
 
-        if ("." !in result){
-            resultTextView.text = "$result"
+        if ("." !in result && result.isNotEmpty()){
+            resultTextView.text = "$result."
         }
 
     }
@@ -114,12 +125,30 @@ class MainActivity : AppCompatActivity() {
     }
 
 
+   fun sqrtClick(clickedView: View){
 
+        val result = resultTextView.text.toString()
 
+        if (result.isNotEmpty()) {
 
+            val sqrt = sqrt(result.toDouble())
+            resultTextView.text = sqrt.toString()
 
+        } else {
+            Toast.makeText(applicationContext, "Enter number.", Toast.LENGTH_SHORT).show()
+        }
+
+    }
 
 }
+
+
+
+
+
+
+
+
 
 
 

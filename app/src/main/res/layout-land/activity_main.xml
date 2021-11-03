@@ -8,266 +8,284 @@
     android:background="@color/black"
     tools:context=".MainActivity">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/resultTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textAlignment="textEnd"
+            android:textColor="@color/white"
+            android:textSize="35sp" />
+
+
+    </LinearLayout>
+
+
 
     <LinearLayout
-        android:id="@+id/linearLayout"
+        android:id="@+id/linearLayout2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@+id/tableLayout2">
-
+        app:layout_constraintBottom_toTopOf="@+id/tableLayout4"
+        tools:ignore="MissingConstraints">
 
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:layout_margin="1dp"
+            android:layout_height="35sp"
             android:layout_weight="1"
+            android:background="@color/numberActionButton2"
             android:gravity="center"
             android:onClick="clearClick"
-            android:text="clear"
+            android:text="C"
             android:textColor="@color/white"
-            android:background="@color/numberActionButton2"
-            android:textSize="30sp"
-            app:layout_constraintHorizontal_weight="1" />
-
+            android:textSize="20sp" />
 
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="100dp"
+            android:layout_height="35sp"
             android:layout_weight="1"
-            android:layout_margin="1dp"
+            android:background="@color/numberActionButton2"
+            android:gravity="center"
+            android:text="√"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="35sp"
+            android:layout_weight="1"
+            android:background="@color/numberActionButton2"
+            android:gravity="center"
+            android:onClick="sqrtClick"
+            android:text="%"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="35sp"
+            android:layout_weight="1"
+            android:background="@color/numberActionButton2"
             android:gravity="center"
             android:onClick="operationClick"
             android:text="/"
             android:textColor="@color/white"
-            android:background="@color/numberActionButton2"
-            android:textSize="30sp"
-            app:layout_constraintHorizontal_weight="1" />
-
+            android:textSize="20sp" />
 
     </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/resultTextView"
-            android:text=""
-            android:textAlignment="textEnd"
-            android:textColor="@color/white"
-            android:textSize="35sp"/>
-
-
-    </LinearLayout>
-
 
 
     <TableLayout
-        android:id="@+id/tableLayout2"
+        android:id="@+id/tableLayout4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="parent"
-        tools:ignore="MissingConstraints">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
 
         <TableRow
-            android:layout_width="wrap_content"
-            android:layout_height="100dp"
+            android:layout_width="match_parent"
+            android:layout_height="35sp"
             android:weightSum="4">
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="100dp"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:text="7"
                 android:onClick="numberClick"
+                android:text="7"
                 android:textColor="@color/white"
-                android:textSize="30sp" />
+                android:textSize="20sp" />
 
             <TextView
-
-                android:layout_width="wrap_content"
-                android:layout_height="100dp"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:onClick="numberClick"
                 android:text="8"
                 android:textColor="@color/white"
-                android:textSize="30sp" />
+                android:textSize="20sp" />
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="100dp"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:onClick="numberClick"
                 android:text="9"
                 android:textColor="@color/white"
-                android:textSize="30sp" />
+                android:textSize="20sp" />
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="100dp"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
                 android:layout_weight="1"
+                android:background="@color/actionButton"
                 android:gravity="center"
-                android:id="@+id/powerButton"
                 android:onClick="operationClick"
                 android:text="*"
                 android:textColor="@color/white"
-                android:background="@color/actionButton"
-                android:textSize="30sp" />
-        </TableRow>
+                android:textSize="20sp" />
 
+
+        </TableRow>
 
         <TableRow
             android:layout_width="wrap_content"
-            android:layout_height="100dp"
+            android:layout_height="35dp"
             android:weightSum="4">
 
             <TextView
                 android:layout_width="wrap_content"
-                android:layout_height="100dp"
+                android:layout_height="35dp"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:onClick="numberClick"
                 android:text="4"
                 android:textColor="@color/white"
-                android:textSize="30sp" />
+                android:textSize="20sp" />
 
             <TextView
-
                 android:layout_width="wrap_content"
-                android:layout_height="100dp"
+                android:layout_height="35dp"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:onClick="numberClick"
                 android:text="5"
                 android:textColor="@color/white"
-                android:textSize="30sp" />
+                android:textSize="20sp" />
 
             <TextView
                 android:layout_width="wrap_content"
-                android:layout_height="100dp"
+                android:layout_height="35dp"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:onClick="numberClick"
                 android:text="6"
                 android:textColor="@color/white"
-                android:textSize="30sp" />
+                android:textSize="20sp" />
 
             <TextView
                 android:layout_width="wrap_content"
-                android:layout_height="100dp"
+                android:layout_height="35dp"
                 android:layout_weight="1"
+                android:background="@color/actionButton"
                 android:gravity="center"
                 android:onClick="operationClick"
                 android:text="-"
                 android:textColor="@color/white"
-                android:background="@color/actionButton"
-                android:textSize="30sp" />
-        </TableRow>
+                android:textSize="20sp" />
 
+
+        </TableRow>
 
         <TableRow
             android:layout_width="wrap_content"
-            android:layout_height="100dp"
+            android:layout_height="35dp"
             android:weightSum="4">
 
             <TextView
                 android:layout_width="wrap_content"
-                android:layout_height="100dp"
+                android:layout_height="35dp"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:onClick="numberClick"
                 android:text="1"
                 android:textColor="@color/white"
-                android:textSize="30sp" />
+                android:textSize="20sp" />
 
             <TextView
-
                 android:layout_width="wrap_content"
-                android:layout_height="100dp"
+                android:layout_height="35dp"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:onClick="numberClick"
                 android:text="2"
                 android:textColor="@color/white"
-                android:textSize="30sp" />
+                android:textSize="20sp" />
 
             <TextView
                 android:layout_width="wrap_content"
-                android:layout_height="100dp"
+                android:layout_height="35dp"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:onClick="numberClick"
                 android:text="3"
                 android:textColor="@color/white"
-                android:textSize="30sp" />
+                android:textSize="20sp" />
 
             <TextView
                 android:layout_width="wrap_content"
-                android:layout_height="100dp"
+                android:layout_height="35dp"
                 android:layout_weight="1"
                 android:background="@color/actionButton"
                 android:gravity="center"
                 android:onClick="operationClick"
                 android:text="+"
                 android:textColor="@color/white"
-                android:textSize="30sp" />
+                android:textSize="20sp" />
+
+
         </TableRow>
 
         <TableRow
             android:layout_width="wrap_content"
-            android:layout_height="100dp"
+            android:layout_height="35dp"
             android:weightSum="4">
 
             <TextView
                 android:layout_width="wrap_content"
-                android:layout_height="100dp"
+                android:layout_height="35dp"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:onClick="floatClick"
                 android:text="."
                 android:textColor="@color/white"
-                android:textSize="30sp" />
+                android:textSize="20sp" />
 
             <TextView
-
                 android:layout_width="wrap_content"
-                android:layout_height="100dp"
+                android:layout_height="35dp"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:onClick="numberClick"
                 android:text="0"
                 android:textColor="@color/white"
-                android:textSize="30sp" />
-
-            <TextView
-                android:layout_width="20dp"
-                android:layout_height="100dp"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:onClick="delClick"
-                android:text="del"
-                android:textColor="@color/white"
-                android:textSize="30sp" />
+                android:textSize="20sp" />
 
             <TextView
                 android:layout_width="wrap_content"
-                android:layout_height="100dp"
+                android:layout_height="35dp"
                 android:layout_weight="1"
+                android:gravity="center"
+                android:onClick="delClick"
+                android:text="Del"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:layout_weight="1"
+                android:background="@color/equalButton"
                 android:gravity="center"
                 android:onClick="equalsClick"
                 android:text="="
                 android:textColor="@color/white"
-                android:background="#F44336"
-                android:textSize="30sp" />
+                android:textSize="20sp" />
+
+
         </TableRow>
 
 
